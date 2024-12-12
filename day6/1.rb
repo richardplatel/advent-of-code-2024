@@ -55,8 +55,8 @@ read_board
 print_board
 
 while true
-  #puts "\e[H\e[2J"
-  #print_board
+  puts "\e[H\e[2J"
+  print_board
   $visited << $guard_pos
   next_pos = [$guard_pos[0] + $moves[$guard_dir][0], $guard_pos[1] + $moves[$guard_dir][1]]
   if $obstacles.include?(next_pos)
@@ -67,7 +67,7 @@ while true
     break
   end
   $guard_pos = next_pos
-  #sleep(0.1)
+  sleep(0.1)
 end
 
 puts ("Woo")
